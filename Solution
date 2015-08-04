@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        int size;
+        int first;
+        int b;
+        int i;
+        int j;
+        
+       
+        int[][] array=new int[t][3];
+       
+        for(i=0;i<t;i++)
+            {
+            for(j=0;j<3;j++)
+                {
+                array[i][j]=in.nextInt();
+                }
+            }
+        for(int k=0;k<t;k++)
+            {
+            
+                size=array[k][2];
+                first=array[k][0];
+                b=array[k][1];
+                int[] answer=new int[size];
+                for(int g=0;g<size;g++)
+                    {
+                    int c=(int)(Math.pow(2,g)*b);
+                    answer[g]=first+c;
+                    first=answer[g];
+                    System.out.print(answer[g]+" ");
+                }
+            System.out.println("\t");
+                
+            
+        }
+        
+    }
+}
